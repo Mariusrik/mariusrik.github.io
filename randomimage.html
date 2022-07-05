@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--This is just a quick mock up using old school javascript-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>random img</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+  </head>
+  <body>
+    <img id="randomPicture" src="" alt="a random image" width="600" height="900">
+
+	<script>
+
+    window.onload = setImg;
+   
+    function setImg() {
+        var randomNum = Math.floor((Math.random() * 10)+1);
+        document.getElementById("randomPicture").src = "https://picsum.photos/id/"+randomNum+"/600/900";
+        document.getElementById("demo").innerHTML = text;
+    }
+    </script>
+  </body>
+</html>
