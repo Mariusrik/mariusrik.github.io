@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         body {
+            font-family: Roboto,sans-serif;
+         }
+         p {
+            font-size: 22px;
+         }
+         * {
+            box-sizing: border-box;
+         }
+         .flex-container {
+            display: flex;
+            flex-direction: row;
+            font-size: 30px;
+            text-align: center;
+         }
+         .flex-item-left {
+            background-color: #303e48;
+            padding: 10px;
+            flex: 50%;
+         }
+         .flex-item-right {
+            background-color: #303e48;
+            padding: 10px;
+            flex: 50%;
+         }
+         @media (max-width: 800px) {
+         .flex-container {
+            flex-direction: column;
+         }
+         }
+         h3 {
+            color: #fd4f00;
+            font-size: 22px;
+         }
+         p, h1 {
+            color: white;
+         }
+         h1 {
+            font-size: 32px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="flex-container">
+         <div class="flex-item-left">
+            <h1 id="tittel">Tusen takk Per og Hilde Karine </h1>
+            <h3 id="subtittel">Tilbakemelding fra FTV Tone Mathisen</h3>
+            <p id="tekst"></p>
+         </div>
+         <div class="flex-item-right"><img id="randomPicture" src="data:," alt="ansatte" width="100%" ></div>
+      </div>
+   </body>
+
+   <script>
+
+    window.onload = setImg;
+   
+    function setImg() {
+        const tilbakemeldingTekst = [
+            [
+              "Tusen takk Nina og Arne (SKV)",
+              "Tilbakemelding fra FTV Tone Mathisen",  
+              "Jeg vil takke Nina for god hjelp på Oslos. Nina hjalp en kunde i rullestol fra spor 7 til 13. Dehaddemistet et eller flere tog før meg og fikk dårlig tid. Damen kunne ikke gå på foten, og kjæresten hennes klarte ikke å bære både damen og bagasje. En stor takk til Arne på Oslo lufthavn, som møtte meg ogkjæresteparet med rullestol. Excellent service av Arne som var på perrongen med rullestol bare to minutter etter at jeg ringte. Passasjerservice på Gardermoen informerte at de ikke hadde mulighet til å bistå med assistanse før om en time. Kundenevar super takknemlig for god hjelp. Ogkanskje rakk flyet sitt den fredags ettermiddag😁 Stor takk fra flytogvert Tone 😁" 
+
+            ],
+            [
+                "Tusen takk Per og Hilde Karine",
+                "Tilbakemelding fra FTV Tone Mathisen",
+                "En super takk til Per og Hilde Karine som hadde plattform på Oslo s fra lørdag natt til søndag.Som kom og møtte meg på spor 2 i 3850 med rullestol. Da jeg hadde et hyggelig gammelt ektepar, hvor den ene var dårlig til beins. De kom med assistanse til toget på Gardermoen. De hadde reist langt å skulle være med bussen videre til Asker.Det gammel ekteparet ble super fornøyd med god service etter en lang reise😁"
+            ]
+        
+        ];
+        var randomNum = Math.floor((Math.random() * 2)+1);
+       
+        document.getElementById("randomPicture").src = "./tilbakemeldingimg/"+randomNum+".png";
+        
+        document.getElementById("tekst").innerHTML = tilbakemeldingTekst[randomNum-1][2];
+        document.getElementById("subtittel").innerHTML = tilbakemeldingTekst[randomNum-1][1];
+        document.getElementById("tittel").innerHTML = tilbakemeldingTekst[randomNum-1][0];
+    }
+    </script>
+</html>
